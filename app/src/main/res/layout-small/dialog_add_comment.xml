@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/dlgCommentText"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_avatar_profile"
+        android:background="@drawable/rounded_edit_text"
+        android:hint="Escribe tu comentario (140 caracteres)"
+        android:maxLength="140"
+        android:padding="8dp"
+        android:textSize="@dimen/size_med_text"
+        tools:text="@string/long_text" />
+
+    <RadioGroup
+        android:id="@+id/dlgCommentRadGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/dlgCommentRdButton"
+            android:layout_width="@dimen/icons_size"
+            android:layout_height="@dimen/icons_size"
+            android:background="@drawable/radio_button"
+            android:button="@android:color/transparent" />
+
+        <RadioButton
+            android:id="@+id/dlgCommentRdButton2"
+            android:layout_width="@dimen/icons_size"
+            android:layout_height="@dimen/icons_size"
+            android:background="@drawable/radio_button2"
+            android:button="@android:color/transparent" />
+
+        <RadioButton
+            android:id="@+id/dlgCommentRdButton3"
+            android:layout_width="@dimen/icons_size"
+            android:layout_height="@dimen/icons_size"
+            android:background="@drawable/radio_button3"
+            android:button="@android:color/transparent" />
+
+        <RadioButton
+            android:id="@+id/dlgCommentRdButton4"
+            android:layout_width="@dimen/icons_size"
+            android:layout_height="@dimen/icons_size"
+            android:background="@drawable/radio_button4"
+            android:button="@android:color/transparent" />
+
+        <RadioButton
+            android:id="@+id/dlgCommentRdButton5"
+            android:layout_width="@dimen/icons_size"
+            android:layout_height="@dimen/icons_size"
+            android:background="@drawable/radio_button5"
+            android:button="@android:color/transparent"
+            android:checked="true" />
+    </RadioGroup>
+</LinearLayout>

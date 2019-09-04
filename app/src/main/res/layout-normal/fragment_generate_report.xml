@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/icons_size"
+        android:paddingRight="@dimen/icons_size">
+
+        <ImageView
+            android:id="@+id/frgGenReportUpload"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/icon_login"
+            android:layout_marginTop="@dimen/icons_size"
+            app:srcCompat="@drawable/upload" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="cargar imagen o video"
+            android:textAlignment="center"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/size_mini_text" />
+
+        <ImageView
+            android:id="@+id/frgGenReportRotateImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/size_mini_margin"
+            android:visibility="gone"
+            app:srcCompat="@android:drawable/ic_menu_rotate" />
+
+        <EditText
+            android:id="@+id/frgGenReportContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_big_icons"
+            android:background="@drawable/rounded_edit_text"
+            android:ems="10"
+            android:hint="Descripción de tu nota (140 caracteres)"
+            android:inputType="text"
+            android:maxLength="140"
+            android:padding="8dp" />
+
+        <EditText
+            android:id="@+id/frgGenReportPlace"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/normal_margin"
+            android:background="@drawable/rounded_edit_text"
+            android:ems="10"
+            android:hint="Indica la ciudad o el lugar "
+            android:inputType="text"
+            android:maxLength="80"
+            android:padding="8dp" />
+
+        <TextView
+            android:id="@+id/frgGenReportCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/normal_margin"
+            android:background="@drawable/rounded_edit_text"
+            android:drawableRight="@drawable/menu_down"
+            android:padding="@dimen/size_low_margin"
+            android:text="Selecciona una Categoría"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/size_low_text"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/frgGenReportSend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/icons_size"
+            android:background="@drawable/rounded_button_orange"
+            android:text="Enviar"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_mini_text" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:text="NORMAS DE LA COMUNIDAD ZIP"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/size_low_text"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/normal_margin"
+            android:text="1. Leíste y aceptas los términos y condiciones."
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/size_mini_text" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2. Verifica tus fuentes. SIEMPRE."
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/size_mini_text" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3. No uses lenguaje ni gestos obscenos."
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/size_mini_text" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="4. Los vídeos podrán durar hasta 20 segundos."
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/size_mini_text" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="5. ZIP deberá aprobar tu contenido."
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/size_mini_text" />
+    </LinearLayout>
+</ScrollView>

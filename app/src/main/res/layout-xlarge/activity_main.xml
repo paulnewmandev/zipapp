@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.zipnoticiasec.ap.app.ui.activities.MainActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme" />
+
+        <ImageView
+            android:id="@+id/mainDiscover"
+            android:layout_width="@dimen/icons_size"
+            android:layout_height="@dimen/icons_size"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            app:srcCompat="@drawable/explora_hover" />
+
+        <TextView
+            android:id="@+id/mainTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/toolbar"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textAllCaps="true"
+            android:textColor="@color/primaryZip"
+            android:textSize="@dimen/size_normal_text"
+            android:textStyle="bold"
+            tools:text="Titulo de Prueba" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/mainImgProfile"
+            android:layout_width="@dimen/icons_size"
+            android:layout_height="@dimen/icons_size"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/logo_color"
+            app:civ_border_color="@color/colorBlack"
+            app:civ_border_width="1dp" />
+
+        <FrameLayout
+            android:id="@+id/containerMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/relativeLayout"
+            android:layout_below="@+id/toolbar"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_alignParentBottom="true">
+
+            <TextView
+                android:id="@+id/mainBoletin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/mainContainerReport"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="4dp"
+                android:text="BOLETIN"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/size_low_text"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/mainResaltBoletin"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_alignLeft="@+id/mainBoletin"
+                android:layout_alignRight="@+id/mainBoletin"
+                android:layout_alignTop="@+id/mainBoletin"
+                android:background="@color/primaryZip"
+                android:orientation="horizontal" />
+
+            <RelativeLayout
+                android:id="@+id/mainContainerReport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/normal_margin"
+                android:layout_marginRight="@dimen/normal_margin">
+
+                <ImageView
+                    android:id="@+id/mainReport"
+                    android:layout_width="@dimen/icon_report_size"
+                    android:layout_height="@dimen/icon_report_size"
+                    android:layout_centerHorizontal="true"
+                    app:srcCompat="@drawable/reporta_color" />
+
+                <ImageView
+                    android:id="@+id/mainUpload"
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/upload" />
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/mainAlMomento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/mainContainerReport"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="4dp"
+                android:text="AL MOMENTO"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/size_low_text"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/mainResaltAlMomento"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_alignLeft="@+id/mainAlMomento"
+                android:layout_alignRight="@+id/mainAlMomento"
+                android:layout_alignTop="@+id/mainAlMomento"
+                android:background="@color/primaryZip"
+                android:orientation="horizontal"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

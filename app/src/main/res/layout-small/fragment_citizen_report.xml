@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/frgCitizenRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <ProgressBar
+            android:id="@+id/progressBar3"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/frgCitizenImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size_main_image"
+                        android:scaleType="centerCrop" />
+
+                    <VideoView
+                        android:id="@+id/frgCitizenVideo"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size_list_image"
+                        android:layout_centerHorizontal="true"
+                        android:visibility="visible" />
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/normal_margin"
+                        android:layout_marginLeft="@dimen/normal_margin"
+                        android:layout_marginRight="@dimen/normal_margin"
+                        android:layout_marginTop="@dimen/size_list_image"
+                        app:cardBackgroundColor="#fff"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="@dimen/normal_margin">
+
+                            <TextView
+                                android:id="@+id/frgCitizenDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/size_low_text"
+                                android:textStyle="bold"
+                                tools:text="Fecha Post" />
+
+                            <TextView
+                                android:id="@+id/frgCitizenCity"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawableLeft="@drawable/map_marker"
+                                android:padding="@dimen/size_mini_margin"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/size_low_text"
+                                tools:text="Nombre Ciudad" />
+
+                            <TextView
+                                android:id="@+id/frgCitizenContent"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/size_med_text"
+                                tools:text="@string/short_text" />
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size_list_image">
+
+                        <ProgressBar
+                            android:id="@+id/progressBar4"
+                            style="?android:attr/progressBarStyle"
+                            android:layout_width="@dimen/social_icons"
+                            android:layout_height="@dimen/social_icons"
+                            android:layout_centerInParent="true" />
+
+                        <TextView
+                            android:id="@+id/frgCitizenVideoProgress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/size_micro_text"
+                            android:visibility="gone"
+                            tools:text="100%" />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/normal_margin">
+
+                    <TextView
+                        android:id="@+id/frgCitizenNameUser"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/background_rounded_black"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="5dp"
+                        android:paddingRight="50dp"
+                        android:paddingBottom="5dp"
+                        android:textColor="#ffffff"
+                        android:textSize="@dimen/size_mini_text"
+                        tools:text="TextView" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/frgCitizenImageUser"
+                        android:layout_width="@dimen/size_show_avatar"
+                        android:layout_height="@dimen/size_show_avatar"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="16dp"
+                        android:src="@drawable/logo_color"
+                        app:civ_border_width="1dp" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/frgCitizenTapLeft"
+        android:layout_width="@dimen/size_avatar_profile"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/icon_intro"
+        android:orientation="vertical" />
+
+    <LinearLayout
+        android:id="@+id/frgCitizenTapRight"
+        android:layout_width="@dimen/size_avatar_profile"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/icon_intro"
+        android:orientation="vertical" />
+
+
+</RelativeLayout>

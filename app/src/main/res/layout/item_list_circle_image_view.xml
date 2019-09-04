@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/itmListCircleImageMainView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/itmListCircleImage"
+        android:layout_width="@dimen/size_states_images"
+        android:layout_height="@dimen/size_states_images"
+        android:layout_margin="@dimen/size_low_margin"
+        android:src="@drawable/image_test"
+        app:civ_border_width="1dp" />
+
+    <LinearLayout
+        android:id="@+id/itmListCircleImageOpacity"
+        android:layout_width="@dimen/size_states_images"
+        android:layout_height="@dimen/size_states_images"
+        android:layout_margin="@dimen/size_low_margin"
+        android:alpha="0.4"
+        android:background="#fff"
+        android:orientation="horizontal"></LinearLayout>
+
+</RelativeLayout>

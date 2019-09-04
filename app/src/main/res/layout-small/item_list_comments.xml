@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/size_low_margin"
+    android:visibility="visible"
+    app:cardBackgroundColor="#ffff"
+    app:cardElevation="5dp"
+    app:contentPadding="@dimen/size_mini_margin">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/commentImgProfile"
+            android:layout_width="@dimen/icons_size"
+            android:layout_height="@dimen/icons_size"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/image_test" />
+
+        <TextView
+            android:id="@+id/commentAuthor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:layout_toRightOf="@+id/commentImgProfile"
+            android:text="TextView"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/size_mini_text"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/commentContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/commentAuthor"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/commentImgProfile"
+            android:text="TextView"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/size_mini_text" />
+
+        <TextView
+            android:id="@+id/commentTimeAgo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/commentContent"
+            android:layout_marginRight="@dimen/normal_margin"
+            android:layout_marginTop="@dimen/size_mini_margin"
+            android:text="hace 21 mins"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/size_micro_text"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

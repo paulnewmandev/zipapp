@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">ZIP Noticias</string>
+    <string name="intro_label">Bienvenidos a Zip Noticias</string>
+    <string name="intro_contract">He leído y acepto los <b><u>términos y condiciones</u></b> de uso de Zip Noticias</string>
+    <string name="login_banner">Información breve, \n clara y concisa de \n Ecuador y el mundo.</string>
+    <string name="facebook_app_id">476129466457071</string>
+    <string name="fb_login_protocol_scheme">fb476129466457071</string>
+    <string name="date_test">Oct\n 2019</string>
+    <string name="short_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</string>
+    <string name="long_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</string>
+
+
+    <string name="error_field_required">Este campo no puede quedar vacío o es inválido</string>
+    <string name="error_short_password">La contraseña no debe quedar vacía o es muy corta</string>
+    <string name="error_server">Error al conectar con el servidor, intente nuevamente, si el problema persiste notifique a la administración por favor</string>
+    <string name="error_json">Error al parsear json, por favor notifique a la administración</string>
+    <string name="not_avaiable">Módulo disponible próximamente</string>
+    <string name="title_newsletter">Boletin</string>
+    <string name="accept">Aceptar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="title_get_data">Obteniendo Información</string>
+    <string name="content_get_data">Por favor espere mientras se consulta la información al Servidor</string>
+    <string name="title_profile">Perfil</string>
+    <string name="title_discover">Explora</string>
+    <string name="title_citizen_report">Reporte Ciudadano</string>
+    <string name="title_at_the_time">Al Momento</string>
+    <string name="error_permissions_req">Debe aceptar todos los permisos para poder continuar</string>
+    <string name="title_send_data">Enviando Información</string>
+    <string name="content_send_data">Por favor espere mientras se envia y se valida la información en el servidor</string>
+    <string name="error_get_file">Error al descargar video</string>
+
+    <array name="options_select_media">
+        <item>grabar video</item>
+        <item>tomar foto</item>
+        <item>imagen desde la galeria</item>
+    </array>
+
+</resources>

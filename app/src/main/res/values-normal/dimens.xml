@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- dimens INTRO -->
+    <dimen name="icon_intro">80dp</dimen>
+    <dimen name="size_title_intro">24sp</dimen>
+    <dimen name="size_normal_text">20sp</dimen>
+
+    <!-- dimens LOGIN -->
+    <dimen name="icon_login">130dp</dimen>
+    <dimen name="social_icons">60dp</dimen>
+    <dimen name="icons_size">32dp</dimen>
+    <dimen name="icon_report_size">54dp</dimen>
+
+    <!-- dimens MAIN -->
+    <dimen name="size_med_text">18sp</dimen>
+    <dimen name="normal_margin">16dp</dimen>
+
+    <!-- dimens VIEW NOTICE -->
+    <dimen name="size_big_text">30sp</dimen>
+    <dimen name="size_low_text">16sp</dimen>
+    <dimen name="size_mini_text">14sp</dimen>
+    <dimen name="size_toolbar">56dp</dimen>
+    <dimen name="size_main_image">200dp</dimen>
+    <dimen name="size_list_image">180dp</dimen>
+    <dimen name="size_show_avatar">45dp</dimen>
+    <dimen name="size_big_icons">48dp</dimen>
+    <dimen name="size_low_margin">8dp</dimen>
+    <dimen name="size_margin_content">150dp</dimen>
+
+    <dimen name="size_avatar_profile">100dp</dimen>
+
+    <dimen name="size_states_images">50dp</dimen>
+
+    <dimen name="size_micro_text">12sp</dimen>
+
+    <dimen name="size_mini_margin">4dp</dimen>
+
+    <dimen name="size_discover_list_image">120dp</dimen>
+
+    <dimen name="icons_size_med">24dp</dimen>
+
+
+
+
+</resources>
