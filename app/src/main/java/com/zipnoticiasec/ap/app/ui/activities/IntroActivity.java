@@ -24,7 +24,7 @@ public class IntroActivity extends AppCompatActivity {
         contract.setOnClickListener(v -> {
             Intent intent = new Intent(IntroActivity.this, BrowserActivity.class);
             intent.putExtra("source", "Términos y condiciones de privacidad");
-            intent.putExtra("url", "http://meinpros.com/zipnoticiasec/terminos.php");
+            intent.putExtra("url", "https://zipnoticias.com.ec/terminos.php");
             startActivity(intent);
         });
 

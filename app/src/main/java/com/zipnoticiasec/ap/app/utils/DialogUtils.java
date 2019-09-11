@@ -17,6 +17,16 @@ public class DialogUtils {
                 .show();
     }
 
+    public static MaterialDialog showProgressCount(Context mCon, String mTitle, String mContent){
+        return new MaterialDialog.Builder(mCon)
+                .title(mTitle)
+                .content(mContent)
+                .cancelable(true)
+                .autoDismiss(true)
+                .progress(false, 100)
+                .show();
+    }
+
     public static MaterialDialog showContentDialog(Context mCon, String mTitle, String mContent){
         return new MaterialDialog.Builder(mCon)
                 .title(mTitle)

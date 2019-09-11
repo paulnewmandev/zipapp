@@ -76,24 +76,25 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/mainContainerReport"
                 android:paddingLeft="16dp"
-                android:paddingRight="16dp"
                 android:paddingTop="4dp"
+                android:paddingRight="16dp"
                 android:text="BOLETIN"
                 android:textAlignment="center"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/size_low_text"
                 android:textStyle="bold"
-                android:visibility="visible" />
+                android:visibility="gone" />
 
             <LinearLayout
                 android:id="@+id/mainResaltBoletin"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:layout_alignLeft="@+id/mainBoletin"
-                android:layout_alignRight="@+id/mainBoletin"
                 android:layout_alignTop="@+id/mainBoletin"
+                android:layout_alignRight="@+id/mainBoletin"
                 android:background="@color/primaryZip"
-                android:orientation="horizontal" />
+                android:orientation="horizontal"
+                android:visibility="gone" />
 
             <RelativeLayout
                 android:id="@+id/mainContainerReport"
@@ -128,21 +129,22 @@
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@+id/mainContainerReport"
                 android:paddingLeft="16dp"
-                android:paddingRight="16dp"
                 android:paddingTop="4dp"
+                android:paddingRight="16dp"
                 android:text="AL MOMENTO"
                 android:textAlignment="center"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/size_low_text"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="gone" />
 
             <LinearLayout
                 android:id="@+id/mainResaltAlMomento"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:layout_alignLeft="@+id/mainAlMomento"
-                android:layout_alignRight="@+id/mainAlMomento"
                 android:layout_alignTop="@+id/mainAlMomento"
+                android:layout_alignRight="@+id/mainAlMomento"
                 android:background="@color/primaryZip"
                 android:orientation="horizontal"
                 android:visibility="gone" />

@@ -156,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        setFragment(getString(R.string.title_newsletter), new FragmentNewsletter());
+        setFragment(getString(R.string.title_discover), new FragmentDiscover());
     }
 
     public void setFragment(String title, final Fragment mFragment) {

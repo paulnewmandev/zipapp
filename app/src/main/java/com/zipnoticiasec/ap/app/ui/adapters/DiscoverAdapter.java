@@ -44,14 +44,14 @@ public class DiscoverAdapter extends RecyclerView.Adapter<DiscoverAdapter.MyView
 
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
-        private CardView mView;
+        private View mMainView;
         private ImageView mImage;
         private TextView mTitle, mSource, mContent, mDate;
         private CircleImageView mImageSource;
 
         public MyViewHolder(View v) {
             super(v);
-            mView = v.findViewById(R.id.itmDiscoverMainView);
+            mMainView = v.findViewById(R.id.itmDiscoverMainView);
             mImage = v.findViewById(R.id.itmDiscoverImage);
             mTitle = v.findViewById(R.id.itmDiscoverTitle);
             mSource = v.findViewById(R.id.itmDiscoverSource);
@@ -92,8 +92,14 @@ public class DiscoverAdapter extends RecyclerView.Adapter<DiscoverAdapter.MyView
         }
         holder.mContent.setText(result);
         holder.mContent.setMovementMethod(LinkMovementMethod.getInstance());
+        holder.mContent.setOnClickListener(v -> {
+            Intent intent = new Intent(mContext, BrowserActivity.class);
+            intent.putExtra("source", mModel.fuente);
+            intent.putExtra("url", mModel.fuente);
+            mContext.startActivity(intent);
+        });
         holder.mDate.setText(mModel.fecha);
-        holder.mView.setOnClickListener(v -> {
+        holder.mMainView.setOnClickListener(v -> {
             Intent intent = new Intent(mContext, BrowserActivity.class);
             intent.putExtra("source", mModel.fuente);
             intent.putExtra("url", mModel.fuente);

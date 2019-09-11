@@ -26,13 +26,13 @@
     <string name="title_at_the_time">Al Momento</string>
     <string name="error_permissions_req">Debe aceptar todos los permisos para poder continuar</string>
     <string name="title_send_data">Enviando Información</string>
-    <string name="content_send_data">Por favor espere mientras se envia y se valida la información en el servidor</string>
+    <string name="content_send_data">Por favor espere mientras se envía y se valida la información en el servidor</string>
     <string name="error_get_file">Error al descargar video</string>
 
     <array name="options_select_media">
         <item>grabar video</item>
         <item>tomar foto</item>
-        <item>imagen desde la galeria</item>
+        <!--<item>imagen desde la galeria</item> -->
     </array>
 
 </resources>

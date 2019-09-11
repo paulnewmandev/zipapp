@@ -6,10 +6,11 @@ package com.zipnoticiasec.ap.app.utils;
 
 public class ApiUtils {
 
-    public static String ApiUrl = "http://meinpros.com/zipnoticiasec/api/";
-    public static String ApiImageUrl = "http://157.230.0.134/simei/api/img/";
-    public static String SECURITY_TOKEN = "Security-Token";
-    public static String SecurityToken = "838eef3094b19eb149e40d771e72a314b16e8887bd54e08500e7e4ce20b65006";
+    public static String ApiUrl = "https://zipnoticias.com.ec/api/";
+    //public static String ApiUrl = "https://meinpros.com/zipnoticiasec/api/";
+    public static String ApiImageUrl = "";
+    public static String SECURITY_TOKEN = "";
+    public static String SecurityToken = "";
 
     //Methods
     public static String POST_USER = "postUser";

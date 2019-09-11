@@ -16,6 +16,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.content.FileProvider;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -85,7 +86,7 @@ public class FragmentGenerateReport extends Fragment {
     private Button mSendReport;
     private ReportModel mModel;
     private List<CategoryModel> mListCategories;
-    private String mCurrentFilePath = "", mAuxFilePath = "";
+    private String mCurrentFilePath = "";
     private int typeFile = 0; //0 noFile, 1 videoFile, 2 pictureFile
     public int mCategorySelected = -1;
     private float currentAngle = 0;
@@ -119,8 +120,7 @@ public class FragmentGenerateReport extends Fragment {
                 imageStream = getActivity().getContentResolver().openInputStream(selectedImage);
                 final Bitmap btmpImage = BitmapFactory.decodeStream(imageStream);
                 mGetFile.setImageBitmap(btmpImage);
-                mRotateImage.setVisibility(View.VISIBLE);
-                mAuxFilePath = "";
+                //mRotateImage.setVisibility(View.VISIBLE);
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
                 showToast(getContext(), "Error al obtener vista previa de la imagen");
@@ -131,8 +131,7 @@ public class FragmentGenerateReport extends Fragment {
             try {
                 Bitmap photo = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), Uri.parse("file:"+mCurrentFilePath));
                 mGetFile.setImageBitmap(photo);
-                mRotateImage.setVisibility(View.VISIBLE);
-                mAuxFilePath = "";
+                //mRotateImage.setVisibility(View.VISIBLE);
             } catch (IOException e) {
                 e.printStackTrace();
                 showToast(getContext(), "Error al obtener vista previa de la imagen");
@@ -142,14 +141,12 @@ public class FragmentGenerateReport extends Fragment {
             Bitmap thumb = ThumbnailUtils.createVideoThumbnail(mCurrentFilePath, MediaStore.Images.Thumbnails.MINI_KIND);
             mGetFile.setImageBitmap(thumb);
             mRotateImage.setVisibility(View.GONE);
-            mAuxFilePath = "";
             showToast(getContext(), "Ha seleccionado un archivo para compartir");
         }else{
             mGetFile.setImageResource(R.drawable.upload);
             showToast(getContext(), "No se ha seleccionado ningun archivo");
             mCurrentFilePath = "";
             mRotateImage.setVisibility(View.GONE);
-            mAuxFilePath = "";
         }
     }
 
@@ -167,7 +164,7 @@ public class FragmentGenerateReport extends Fragment {
 
     private void initFragment(){
         mGetFile.setOnClickListener(v -> checkPermissions());
-        mRotateImage.setOnClickListener(v -> rotateImage());
+        //mRotateImage.setOnClickListener(v -> rotateImage());
         mListCategories = SessionUtils.getCategories(getContext());
         mSelectCategory.setOnClickListener(v -> dialogSelectCategories());
         mSendReport.setOnClickListener(v -> {
@@ -363,22 +360,40 @@ public class FragmentGenerateReport extends Fragment {
     }
 
     private void sendReport() {
-        MaterialDialog mDialog = DialogUtils.showProgress(getContext(), getString(R.string.title_send_data), getString(R.string.content_send_data));
+        MaterialDialog mDialog = DialogUtils.showProgressCount(getContext(), getString(R.string.title_send_data), getString(R.string.content_send_data));
         String mUrl = ApiUrl+POST_REPORT;
         RequestParams mParams = new RequestParams();
         mParams.put("id_usuario", SessionUtils.getUser(getContext()).id);
-        //mParams.put("id_categoria", mListCategories.get(mCategorySelected).id);
         mParams.put("lugar", mPlace.getText().toString());
+        mParams.put("descripcion", mDescription.getText().toString());
+        Log.d("url", mUrl);
+        Log.d("id_usuario", String.valueOf(SessionUtils.getUser(getContext()).id));
+        Log.d("lugar", mPlace.getText().toString());
+        Log.d("descripcion", mDescription.getText().toString());
+        Log.d("file_path", mCurrentFilePath);
         try {
             mParams.put("multimedia", new File(mCurrentFilePath));
+            Log.d("Monitoreando archivo", "Archivo Cargado correctamente");
         } catch (FileNotFoundException e) {
+            Log.d("Monitoreando archivo", "Error cargano archivo");
             e.printStackTrace();
             showToast(getContext(), "Error al cargar archivo");
         }
-        mParams.put("descripcion", mDescription.getText().toString());
+        //mParams.put("id_categoria", mListCategories.get(mCategorySelected).id);
+
         new AsyncHttpClient().post(mUrl, mParams, new BaseJsonHttpResponseHandler() {
             @Override
+            public void onProgress(long bytesWritten, long totalSize) {
+                super.onProgress(bytesWritten, totalSize);
+                Double mTotal = ((double) bytesWritten/totalSize) * 100;
+                if(mDialog != null){
+                    mDialog.setProgress(mTotal.intValue());
+                }
+            }
+
+            @Override
             public void onSuccess(int statusCode, Header[] headers, String rawJsonResponse, Object response) {
+                Log.d("Respuesta server", rawJsonResponse);
                 mDialog.dismiss();
                 try {
                     JSONObject mJson = new JSONObject(rawJsonResponse);
@@ -396,6 +411,11 @@ public class FragmentGenerateReport extends Fragment {
             @Override
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, String rawJsonData, Object errorResponse) {
                 mDialog.dismiss();
+                Log.d("Respuesta server", "Fallo el envio");
+                Log.d("error", throwable.getMessage());
+                if(rawJsonData != null){
+                    Log.d("json error", rawJsonData);
+                }
                 dialogSuccess();
             }
 
@@ -408,7 +428,7 @@ public class FragmentGenerateReport extends Fragment {
 
     private void dialogSuccess(){
         MaterialDialog mDialog = DialogUtils.showContentDialog(getActivity(), "Resultado",
-                "Reporte enviado satisfactoriamente \n estará disponible al ser aprobado por la administración");
+                "¡Eres de los nuestros! \n Gracias por enviar tu reporte. \n Estará disponible al ser aprobado por el equipo ZIP.");
         mDialog.getActionButton(DialogAction.POSITIVE).setOnClickListener(v -> {
             mDialog.dismiss();
             MainActivity mActivity = (MainActivity) getActivity();
@@ -422,17 +442,5 @@ public class FragmentGenerateReport extends Fragment {
         });
     }
 
-    private void rotateImage(){
-        if(currentAngle < 90){
-            currentAngle = 90;
-        }else if(currentAngle < 180){
-            currentAngle = 180;
-        }else if(currentAngle < 270){
-            currentAngle = 270;
-        }else{
-            currentAngle = 0;
-        }
-        mGetFile.setRotation(currentAngle);
-    }
 
 }
